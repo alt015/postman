@@ -1,0 +1,723 @@
+{
+	"info": {
+		"_postman_id": "dac12c3e-788c-40f4-9064-b66510fe33f6",
+		"name": "Skillbox",
+		"description": "Методы работы с приложением База данных",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26230350"
+	},
+	"item": [
+		{
+			"name": "v1",
+			"item": [
+				{
+					"name": "Получение всех клиентов",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "1",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "1@1.1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api-qa.skillbox.ru/{{param}}/api/users?name=1",
+							"protocol": "https",
+							"host": [
+								"api-qa",
+								"skillbox",
+								"ru"
+							],
+							"path": [
+								"{{param}}",
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получение нужного клиента",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "1",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "1@1.1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api-qa.skillbox.ru/practice1/api/users?name=1",
+							"protocol": "https",
+							"host": [
+								"api-qa",
+								"skillbox",
+								"ru"
+							],
+							"path": [
+								"practice1",
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание клиента",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "1",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "1@1.1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"itemsOfClients\": [\r\n        {\r\n            \"id\": \"1\",\r\n            \"person\": {\r\n                \"name\": \"Дан\",\r\n                \"surname\": \"Балан\",\r\n                \"patronymic\": \"Кекович\",\r\n                \"dateOfBirth\": \"11.11.2010\",\r\n                \"location\": null\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api-qa.skillbox.ru/practice1/api/users/create",
+							"protocol": "https",
+							"host": [
+								"api-qa",
+								"skillbox",
+								"ru"
+							],
+							"path": [
+								"practice1",
+								"api",
+								"users",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Удаление клиента",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "1",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "1@1.1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://api-qa.skillbox.ru/practice1/api/users/47/delete",
+							"protocol": "https",
+							"host": [
+								"api-qa",
+								"skillbox",
+								"ru"
+							],
+							"path": [
+								"practice1",
+								"api",
+								"users",
+								"47",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Удаление всех клиентов",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "1",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "1@1.1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://api-qa.skillbox.ru/practice1/api/users/allUsers/delete",
+							"protocol": "https",
+							"host": [
+								"api-qa",
+								"skillbox",
+								"ru"
+							],
+							"path": [
+								"practice1",
+								"api",
+								"users",
+								"allUsers",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Редактирование клиента",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "1",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "1@1.1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n\"update\": { \r\n\"dateOfBirth\": \"15.15.2020\"\r\n} \r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api-qa.skillbox.ru/practice1/api/users/46/update",
+							"protocol": "https",
+							"host": [
+								"api-qa",
+								"skillbox",
+								"ru"
+							],
+							"path": [
+								"practice1",
+								"api",
+								"users",
+								"46",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "v2",
+			"item": [
+				{
+					"name": "Получение списка клиентов",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "1",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "1@1.1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api-qa.skillbox.ru/practice2/api/users/",
+							"protocol": "https",
+							"host": [
+								"api-qa",
+								"skillbox",
+								"ru"
+							],
+							"path": [
+								"practice2",
+								"api",
+								"users",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "саша",
+									"description": "bug1, bug2",
+									"disabled": true
+								},
+								{
+									"key": "surname",
+									"value": "Иванов",
+									"disabled": true
+								},
+								{
+									"key": "patronymic",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "dateOfBirth",
+									"value": "01.01.2024",
+									"description": "bug4, bug7",
+									"disabled": true
+								},
+								{
+									"key": "location",
+									"value": "18",
+									"description": "bug2, bug6",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получение списка клиента",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "1",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "1@1.1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api-qa.skillbox.ru/practice2/api/users/45",
+							"protocol": "https",
+							"host": [
+								"api-qa",
+								"skillbox",
+								"ru"
+							],
+							"path": [
+								"practice2",
+								"api",
+								"users",
+								"45"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "password",
+						"value": "1",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "1@1.1",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "v3",
+			"item": [
+				{
+					"name": "Получение всех клиентов Copy",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "1",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "1@1.1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api-qa.skillbox.ru/practice3/api/users",
+							"protocol": "https",
+							"host": [
+								"api-qa",
+								"skillbox",
+								"ru"
+							],
+							"path": [
+								"practice3",
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получение нужного клиента Copy",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "1",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "1@1.1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api-qa.skillbox.ru/practice3/api/users/1",
+							"protocol": "https",
+							"host": [
+								"api-qa",
+								"skillbox",
+								"ru"
+							],
+							"path": [
+								"practice3",
+								"api",
+								"users",
+								"1"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание клиента Copy",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "1",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "1@1.1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"itemsOfClients\": [\r\n        {\r\n            \"id\": \"1\",\r\n            \"person\": {\r\n                \"name\": \"Дан\",\r\n                \"surname\": \"Балан\",\r\n                \"patronymic\": \"Кекович\",\r\n                \"dateOfBirth\": \"11.11.2010\",\r\n                \"location\": null\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api-qa.skillbox.ru/practice3/api/users/create",
+							"protocol": "https",
+							"host": [
+								"api-qa",
+								"skillbox",
+								"ru"
+							],
+							"path": [
+								"practice3",
+								"api",
+								"users",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Удаление клиента Copy",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "1",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "1@1.1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://api-qa.skillbox.ru/practice3/api/users/1/delete",
+							"protocol": "https",
+							"host": [
+								"api-qa",
+								"skillbox",
+								"ru"
+							],
+							"path": [
+								"practice3",
+								"api",
+								"users",
+								"1",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Удаление всех клиентов Copy",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "1",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "1@1.1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://api-qa.skillbox.ru/practice3/api/users/allUsers/delete",
+							"protocol": "https",
+							"host": [
+								"api-qa",
+								"skillbox",
+								"ru"
+							],
+							"path": [
+								"practice3",
+								"api",
+								"users",
+								"allUsers",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Редактирование клиента Copy",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "1",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "1@1.1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n\"update\": { \r\n\"name\": \"string\", \r\n\"surname\": \"string\", \r\n\"dateOfBirth\": \"datetime\", \r\n\"location\": \"string\" \r\n} \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api-qa.skillbox.ru/practice3/api/users/1/update",
+							"protocol": "https",
+							"host": [
+								"api-qa",
+								"skillbox",
+								"ru"
+							],
+							"path": [
+								"practice3",
+								"api",
+								"users",
+								"1",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "1",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "1@1.1",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "param",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
